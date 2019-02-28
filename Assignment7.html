@@ -1,0 +1,29 @@
+<html>
+<head>Lyrics</head>
+<body>
+  <div id="song"></div>
+  <artist>Taking Back Sunday </artist>
+  <song>Sink Into Me</song>
+</body>
+<script>
+  var lyricRequest = new XMLHttpRequest();
+  lyricRequest.open('GET', 'http://www.chartlyrics.com/Sc4LNRvCN0G1Cgdm3tB-TQ/Sink+Into+Me.aspx)');
+
+  lyricRequest.send(null);
+
+  lyricRequest.onreadystatechange = function(){
+    var DONE = 4;
+    var OK = 200;
+    if (lyricRequest.readyState === DONE) {
+
+    if (lyricRequest.status === OK) {
+      var lyricResponse = JSON.parse(lyricRequest.responseText);
+}else {
+
+console.log('Error: ' + xhr.status);
+}
+};
+  </script>
+  <script src = http://api.chartlyrics.com/apiv1.asmx/SearchLyric?artist=TakingBackSunday&song=SinkIntoMe>
+    </script>
+  </html>
