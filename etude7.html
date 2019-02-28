@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>My API Practice</title>
+  </head>
+  <body>
+    <div id="main">
+      Something will go here
+    </div>
+  </body>
+  <script>
+
+function musixResults(JSON){
+
+ var myDiv = document.getElementById("main");
+
+ myDiv.innerHTML = "<img src= artist_id />" ;
+
+  console.log(JSON);}
+
+</script>
+
+  <script src='https://developer.musixmatch.com/documentation/api-reference/artist-search?apikey=chertenstein&q_artist=prodigy&page_size=5'>
+    </script>
+</html>
