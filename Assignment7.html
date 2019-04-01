@@ -6,23 +6,31 @@
   <song>Sink Into Me</song>
 </body>
 </html>
-<script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/5c14af6f3e042d91e1a6ecdaacc78a9c">
-
-  var lyricRequest = new XMLHttpRequest();
-  lyricRequest.open('GET', 'https://www.musixmatch.com/lyrics/Taking-Back-Sunday/Sink-Into-Me)');
-
-  lyricRequest.send(null);
-
-  lyricRequest.onreadystatechange = function(){
-    var DONE = 4;
-    var OK = 200;
-    if (lyricRequest.readyState === DONE) {
-
-    if (lyricRequest.status === OK) {
-      var lyricResponse = JSON.parse(lyricRequest.responseText);
-}else {
-
-console.log('Error: ' + xhr.status);
-}
-};
+<script type="text/javascript" src="https://api.musixmatch.com/ws/1.1/apikey=5c14af6f3e042d91e1a6ecdaacc78a9c">
+  function createCall(){
+    let myScript = document.createElement("script");
+    let tags = document.getElementById('takingbacksunday').value;
+    myScript.src ='https://api.musixmatch.com/ws/1.1/artist.get?artist_id=&format=jsonp&tags=takingbacksunday&callback=songLyrics';
+  }
+  function songLyrics(songData){
+    var myDiv = document.getElementById("song");
+    for(let i = 0; i < 10; i++)
+  }
+//   var lyricRequest = new XMLHttpRequest();
+//   lyricRequest.open('GET', 'https://www.musixmatch.com/lyrics/Taking-Back-Sunday/Sink-Into-Me');
+//
+//   lyricRequest.send(null);
+//
+//   lyricRequest.onreadystatechange = function(){
+//     var DONE = 4;
+//     var OK = 200;
+//     if (lyricRequest.readyState === DONE) {
+//
+//     if (lyricRequest.status === OK) {
+//       var lyricResponse = JSON.parse(lyricRequest.responseText);
+// }else {
+//
+// console.log('Error: ' + xhr.status);
+// }
+// };
 </script>
